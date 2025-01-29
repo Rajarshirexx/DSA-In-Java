@@ -18,14 +18,24 @@ package BinarySearch;
 public class CeilingOfANumber {
     public static void main(String[] args) {
         int[] arr = {-7,-5 ,-3 ,3, 5, 9, 12, 15, 21, 30, 37, 45};
-        int target = 16;
+        int target = 13;
         int ans = Ceiling(arr, target);
-        System.out.println("The ceiling is at index: " + ans );
+        
+        if (ans == -1) {
+            System.out.println("No ceiling found for target " + target);
+        } else {
+            System.out.println("The ceiling is at index: " + ans + " (value: " + arr[ans] + ")");
+        }
     }
     
     static int Ceiling(int[] arr, int target) {
         int start = 0;
         int end = arr.length - 1;
+
+        // if the target is greater than the greatest number in the array
+        if (target > arr[arr.length - 1]) {
+            return -1;
+        }
 
         while (start <= end) {
             int mid = start + (end - start) / 2;

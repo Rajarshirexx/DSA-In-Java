@@ -17,28 +17,36 @@ package BinarySearch;
 
 public class FloorOfANumber {
     public static void main(String[] args) {
-        int[] arr = {-7,-5 ,-3 ,3, 5, 9, 12, 15, 21, 30, 37, 45};
-        int target = 16;
+        int[] arr = {-7, -5 ,-3 ,3, 5, 9, 12, 15, 21, 30, 37, 45};
+        int target = -4;
         int ans = Floor(arr, target);
-        System.out.println("The ceiling is at index: " + ans );
+        if (ans == -1) {
+            System.out.println("No floor found for target " + target);
+        } else {
+            System.out.println("The floor is at index: " + ans + " (value: " + arr[ans] + ")");
+        }
     }
+    
     
     static int Floor(int[] arr, int target) {
         int start = 0;
         int end = arr.length - 1;
 
         while (start <= end) {
+            if (target < arr[start]) {
+                return -1; // No floor exists
+            }
             int mid = start + (end - start) / 2;
             
-            if (target < arr[mid]) {
-                end = mid - 1;
-            } else if (target > arr[mid]) {
-                start = mid + 1;
+            if (arr[mid] == target) {
+                return mid; 
+            } else if (arr[mid] < target) {
+                start = mid + 1; 
             } else {
-                // ans found
-                return mid;
+                end = mid - 1; 
             }
         }
-        return end;
+        
+        return end; // The floor of the target is at 'end'
     }
 }
