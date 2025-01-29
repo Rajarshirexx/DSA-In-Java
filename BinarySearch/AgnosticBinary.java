@@ -23,12 +23,7 @@ public class AgnosticBinary {
 
         // find whether the array is ascending or descending
 
-        boolean isAsc;
-        if (arr[start] < arr[end]) {
-            isAsc = true;
-        } else {
-            isAsc = false;
-        }
+        boolean isAsc = arr[start] < arr[end];
 
         while (start <= end) {
             // find the middle element
