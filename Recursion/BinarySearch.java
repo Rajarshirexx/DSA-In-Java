@@ -1,6 +1,5 @@
 package Recursion;
 
-
 public class BinarySearch {
     public static void main(String[] args) {
         int[] arr = {2, 5, 7, 9, 12, 16};
