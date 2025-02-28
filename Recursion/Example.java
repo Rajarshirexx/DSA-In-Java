@@ -34,7 +34,4 @@ public class Example {
         printBoth(n - 1);
         System.out.println(n);
     }
-
-
-
 }
