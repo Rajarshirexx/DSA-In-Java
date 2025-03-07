@@ -19,7 +19,7 @@ public class LinearSearch {
         }
         return search(arr, target, index + 1);
     }
-
+ 
     // Return multiple indices (Better way)
     static ArrayList<Integer> findAllIndex(int[] arr, int target, int index, ArrayList<Integer> list) {
         if (index == arr.length) {
