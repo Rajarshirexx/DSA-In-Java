@@ -16,4 +16,5 @@ public class SkipAString {
             return up.charAt(0) + skipString(up.substring(1));
         }
     }
+    
 }
